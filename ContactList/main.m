@@ -7,11 +7,27 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "InputCollector.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        BOOL menuOn = YES;
+        
+       
+        while (menuOn == YES){
+            InputCollector *firstcontact =[[InputCollector alloc]init];
+            NSString * output =[firstcontact inputForPrompt:@"The menu: What would you like do next? new - Create a new contact list - List all contacts quit - Exit Application"];
+              \
+            NSLog(@"%@",output);
+            if ([output isEqualToString:@"quit"]) {
+                menuOn = NO;
+                continue;
+            }
+            
+        }
+        
+        
+        return 0;
     }
-    return 0;
 }
+
